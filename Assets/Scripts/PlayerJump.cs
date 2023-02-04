@@ -27,7 +27,7 @@ public class PlayerJump : MonoBehaviour
     public float rotSpeed;
     void Start()
     {
-        jumpIncreaseRate = 1;
+        jumpIncreaseRate = 0.5f;
         jumpPowerLimit = 15;
 
         Player = this.gameObject;
@@ -37,7 +37,7 @@ public class PlayerJump : MonoBehaviour
         jumpArrowUI.enabled = false;
     }
 
-   
+
     void Update()
     {
         Jump();
@@ -51,9 +51,9 @@ public class PlayerJump : MonoBehaviour
 
         MousePos = Input.mousePosition;
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !isJumping)
         {
-            jumpArrowUI.enabled = true;
+            //jumpArrowUI.enabled = true;
             if (JumpPower <= jumpPowerLimit)
             {
                 JumpPower += jumpIncreaseRate;
@@ -68,9 +68,9 @@ public class PlayerJump : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && !isJumping)
         {
-            jumpArrowUI.enabled = false;
+            //jumpArrowUI.enabled = false;
             isJumping = false;
             Player.GetComponent<Rigidbody>().velocity = JumpPower * JumpDirection;
             JumpPower = 0;
@@ -85,5 +85,13 @@ public class PlayerJump : MonoBehaviour
         jumpArrow.transform.rotation = Quaternion.RotateTowards(jumpArrow.transform.rotation, rotation, rotSpeed * Time.deltaTime);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        isJumping = false;
+    }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        isJumping = true;
+    }
 }
