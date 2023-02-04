@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class LeafAnimScript : MonoBehaviour
 {
+    public GameObject player;
     private void OnCollisionEnter(Collision collision)
     {
         gameObject.GetComponent<Animation>().Play();
+
+        player.GetComponent<HealthSystem>().RespawnLoc = gameObject.transform.GetChild(1).transform.position;
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
 {
+    public Vector3 RespawnLoc;
     public int MaxHealth;
     public int Health;
     public GameObject[] Hearts;

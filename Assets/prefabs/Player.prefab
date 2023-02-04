@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f3deea8d8d47548a05884423ebc858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RespawnLoc: {x: 0, y: 0, z: 0}
   MaxHealth: 3
   Health: 3
   Hearts:
