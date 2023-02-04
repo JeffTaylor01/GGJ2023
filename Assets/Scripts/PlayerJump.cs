@@ -12,8 +12,9 @@ public class PlayerJump : MonoBehaviour
     Camera camera;
     Vector3 MousePos;
     public Vector3 JumpDirection;
-    float JumpPower;
-    public float jumpIncreasRate;
+    public float JumpPower;
+    public float jumpIncreaseRate;
+    public float jumpPowerLimit;
 
     public bool isJumping;
 
@@ -26,6 +27,9 @@ public class PlayerJump : MonoBehaviour
     public float rotSpeed;
     void Start()
     {
+        jumpIncreaseRate = 1;
+        jumpPowerLimit = 15;
+
         Player = this.gameObject;
         camera = Camera.main;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -50,8 +54,10 @@ public class PlayerJump : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             jumpArrowUI.enabled = true;
-            //isJumping = true;
-            JumpPower += jumpIncreasRate;
+            if (JumpPower <= jumpPowerLimit)
+            {
+                JumpPower += jumpIncreaseRate;
+            }
 
             if (Physics.Raycast(ray, out hit))
             {

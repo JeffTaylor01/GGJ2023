@@ -314,8 +314,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178728082}
-  m_LocalRotation: {x: 0, y: 0, z: 0.6163489, w: 0.78747326}
-  m_LocalPosition: {x: -0.8, y: 10.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.6163489, w: 0.78747326}
+  m_LocalPosition: {x: -0.8000006, y: 10.5, z: 0}
   m_LocalScale: {x: 5.382363, y: 5.382363, z: 6.151272}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -468,15 +468,23 @@ PrefabInstance:
       objectReference: {fileID: 107729331}
     - target: {fileID: 1103899167, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
       propertyPath: rotSpeed
-      value: 20
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 1103899167, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
       propertyPath: jumpArrow
       value: 
-      objectReference: {fileID: 107729331}
+      objectReference: {fileID: 178728082}
+    - target: {fileID: 1103899167, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+      propertyPath: jumpPowerLimit
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1103899167, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
       propertyPath: playerOffset.y
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103899167, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+      propertyPath: jumpIncreasRate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8549253416156401051, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
       propertyPath: m_RootOrder
