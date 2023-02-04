@@ -9,6 +9,10 @@ public class Pause : MonoBehaviour
 
     public bool isPaused = false;
 
+    private void Start()
+    {
+        Time.timeScale = 0;
+    }
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -29,7 +33,7 @@ public class Pause : MonoBehaviour
         pauseMenu.SetActive(true);
     }
 
-    void ResumeGame()
+    public void ResumeGame()
     {
         isPaused = false;
         Time.timeScale = 1;
@@ -44,5 +48,16 @@ public class Pause : MonoBehaviour
     public void ResumeSize()
     {
         transform.localScale = new Vector2(1.0f, 1.0f);
+    }
+
+    public void TimeScaleResume()
+    {
+        Time.timeScale = 1;
+    }
+
+    public IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(5);
+        Time.timeScale = 1;
     }
 }
