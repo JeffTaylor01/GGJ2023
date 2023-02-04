@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1539952358690894484}
   - component: {fileID: 3944441620053983725}
   - component: {fileID: 6666857508399985140}
+  - component: {fileID: 116095524}
+  - component: {fileID: 116095523}
   m_Layer: 0
   m_Name: LeftLeaf
   m_TagString: Untagged
@@ -57,6 +59,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd0a680203d21f14ebdcd172fd5e97cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!111 &116095524
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2623267346077880501}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: f6c1367608b9beb4fbff1412303aa1fe, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: f6c1367608b9beb4fbff1412303aa1fe, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &116095523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2623267346077880501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20eefb920a5a43d429a3d007666c800c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8701833215888849758
