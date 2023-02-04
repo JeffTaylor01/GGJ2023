@@ -37,7 +37,7 @@ public class PlayerJump : MonoBehaviour
         jumpArrowUI.enabled = false;
     }
 
-
+   
     void Update()
     {
         Jump();
@@ -78,8 +78,12 @@ public class PlayerJump : MonoBehaviour
     }
     private void RotateArrow(Vector3 rotationDirection)
     {
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(0, 0, 1), rotationDirection);
-        jumpArrow.transform.rotation = Quaternion.RotateTowards(jumpArrow.transform.rotation, lookRotation, rotSpeed * Time.deltaTime);
+        Vector3 screenPos = camera.WorldToScreenPoint(Player.transform.position);
+        Vector3 direction = (Input.mousePosition - screenPos).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.Euler(0, 0, angle);
+        jumpArrow.transform.rotation = Quaternion.RotateTowards(jumpArrow.transform.rotation, rotation, rotSpeed * Time.deltaTime);
     }
+
 
 }

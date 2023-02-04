@@ -25,11 +25,11 @@ public class BeanGrowth : MonoBehaviour
 
         if (BeanLean > 15)
         {
-            CurrentBean = RightBean;
+            CurrentBean = LeftBean;
         }
         else if (BeanLean < -15)
         {
-            CurrentBean = LeftBean;
+            CurrentBean = RightBean;
         }
         else if (BeanLean > -15 && BeanLean < 15)
         {
