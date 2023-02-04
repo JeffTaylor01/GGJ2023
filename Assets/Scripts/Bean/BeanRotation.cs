@@ -4,53 +4,35 @@ using UnityEngine;
 
 public class BeanRotation : MonoBehaviour
 {
-    public float globalAngle;
-    public float RotationSpeed;
     public Transform player;
+    public float RotationSpeed;
+    public float globalAngle;
+    public float raycastLength;
 
-    GameObject AdjacentBean;
-
-    void Start()
+    void FixedUpdate()
     {
-        globalAngle = 0;
-    }
+        RaycastHit hitLeft, hitRight;
+        Vector3 leftDirection = -player.right;
+        Vector3 rightDirection = player.right;
 
-    void Update()
-    {
-        AdjacentBean = GetAdjacentBean();
-
-        if (AdjacentBean != null)
+        if (Physics.Raycast(player.position, leftDirection, out hitLeft, raycastLength) &&
+            Physics.Raycast(player.position, rightDirection, out hitRight, raycastLength))
         {
-            Vector3 direction = AdjacentBean.transform.position - player.position;
-
-            if(direction.x > 0)
+            RaycastHit hit = hitLeft.distance < hitRight.distance ? hitLeft : hitRight;
+            if (hit.collider.CompareTag("Bean"))
             {
-                globalAngle += 0.07f;
-            }
+                Vector3 direction = hit.transform.position - player.position;
 
-            if (direction.x < 0)
-            {
-                globalAngle -= 0.07f;
-            }
+                if (direction.x > 0)
+                {
+                    globalAngle += 0.07f;
+                }
 
-            //globalAngle = -Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        }
-
-        Quaternion newRotation = Quaternion.Euler(0, 0, globalAngle);
-        transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * RotationSpeed);
-    }
-
-    GameObject GetAdjacentBean()
-    {
-        GameObject[] Beans = GameObject.FindGameObjectsWithTag("Bean");
-        GameObject nearestBean = Beans[0];
-        foreach (GameObject Bean in Beans)
-        {
-            if (Vector3.Distance(Bean.transform.position, player.position) < Vector3.Distance(nearestBean.transform.position, player.position))
-            {
-                nearestBean = Bean;
+                if (direction.x < 0)
+                {
+                    globalAngle -= 0.07f;
+                }
             }
         }
-        return nearestBean;
     }
 }

@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8696154617670865197, guid: b216fd2e17e4be149a1b2450bce64c0e, type: 3}
+      propertyPath: m_TagString
+      value: Bean
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b216fd2e17e4be149a1b2450bce64c0e, type: 3}
 --- !u!1 &148835167 stripped
@@ -1249,9 +1253,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b14fb2aaf2b1ba34bbd4485b877fa2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globalAngle: 0
-  RotationSpeed: 100
   player: {fileID: 148835168}
+  RotationSpeed: 100
+  globalAngle: 0
+  raycastLength: 100
 --- !u!212 &1663447701
 SpriteRenderer:
   m_ObjectHideFlags: 0
