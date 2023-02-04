@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RootGrowth : MonoBehaviour
 {
+    public GameObject BeanBase;
     public GameObject StraightRoot;
     public GameObject LeftRoot;
     public GameObject RightRoot;
@@ -21,7 +22,7 @@ public class RootGrowth : MonoBehaviour
 
     void Update()
     {
-        BeanLean = gameObject.GetComponent<BeanRotation>().globalAngle;
+        BeanLean = BeanBase.GetComponent<BeanRotation>().globalAngle;
 
         if (BeanLean > 15)
         {

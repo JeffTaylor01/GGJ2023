@@ -41,7 +41,7 @@ public class PlayerJump : MonoBehaviour
     void Update()
     {
         Jump();
-        RotateArrow(JumpDirection);
+        //RotateArrow(JumpDirection);
     }
 
     private void Jump()
