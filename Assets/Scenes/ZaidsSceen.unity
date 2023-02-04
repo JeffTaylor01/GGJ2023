@@ -964,6 +964,8 @@ MonoBehaviour:
   player: {fileID: 429817717}
   globalAngle: 0
   rotationSpeed: 0.07
+  beanGrowth: {fileID: 1663447699}
+  LastBean: {fileID: 0}
 --- !u!212 &1663447701
 SpriteRenderer:
   m_ObjectHideFlags: 0

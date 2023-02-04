@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class BeanRotation : MonoBehaviour
 {
     public Transform player;
     public float globalAngle;
     public float rotationSpeed;
+    public BeanGrowth beanGrowth;
 
     private void FixedUpdate()
     {
-        if (player.position.x > transform.position.x)
+        Transform lastBean = beanGrowth.LastBean.transform;
+
+        if (player.position.x > lastBean.position.x)
         {
             globalAngle -= rotationSpeed;
         }
@@ -18,7 +20,7 @@ public class BeanRotation : MonoBehaviour
         {
             globalAngle += rotationSpeed;
         }
-       /*
+        /*
         if (globalAngle < 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + 0.1f);
@@ -27,6 +29,6 @@ public class BeanRotation : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 0.1f);
         }
-       */
+        */
     }
 }
