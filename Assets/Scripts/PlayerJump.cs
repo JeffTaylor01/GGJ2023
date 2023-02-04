@@ -37,7 +37,7 @@ public class PlayerJump : MonoBehaviour
         jumpArrowUI.enabled = false;
     }
 
-
+   
     void Update()
     {
         Jump();
