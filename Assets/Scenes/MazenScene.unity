@@ -561,6 +561,7 @@ GameObject:
   - component: {fileID: 1333584350}
   - component: {fileID: 1333584349}
   - component: {fileID: 1333584351}
+  - component: {fileID: 1333584352}
   m_Layer: 0
   m_Name: basebean
   m_TagString: Untagged
@@ -642,7 +643,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333584348}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5638720a36f48f54b8c3ebcf9bf12de5, type: 3}
   m_Name: 
@@ -652,6 +653,20 @@ MonoBehaviour:
   player: {fileID: 655691354}
   spawnPoint: {fileID: 2141464811}
   lastSpawnPos: {x: 0, y: 0, z: 0}
+--- !u!114 &1333584352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333584348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14fb2aaf2b1ba34bbd4485b877fa2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 655691357}
+  globalAngle: 0
 --- !u!1 &1441817743
 GameObject:
   m_ObjectHideFlags: 0
