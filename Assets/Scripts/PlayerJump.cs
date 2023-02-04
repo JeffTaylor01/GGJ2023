@@ -78,7 +78,8 @@ public class PlayerJump : MonoBehaviour
     }
     private void RotateArrow(Vector3 rotationDirection)
     {
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(0, 0, jumpArrow.transform.rotation.z), rotationDirection);
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(0, 0, 1), rotationDirection);
         jumpArrow.transform.rotation = Quaternion.RotateTowards(jumpArrow.transform.rotation, lookRotation, rotSpeed * Time.deltaTime);
     }
+
 }
