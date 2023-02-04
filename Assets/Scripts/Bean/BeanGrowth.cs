@@ -7,9 +7,9 @@ public class BeanGrowth : MonoBehaviour
     public GameObject StraightBean;
     public GameObject LeftBean;
     public GameObject RightBean;
-    public GameObject CurrentBean;
+    GameObject CurrentBean;
     public GameObject LastBean;
-    float GrowthRate;
+    public float GrowthRate;
     float BeanLean;
 
     void Start()
@@ -20,6 +20,8 @@ public class BeanGrowth : MonoBehaviour
 
     void Update()
     {
+        BeanLean = gameObject.GetComponent<BeanRotation>().globalAngle;
+
         if (BeanLean > 15)
         {
             CurrentBean = RightBean;
@@ -32,30 +34,35 @@ public class BeanGrowth : MonoBehaviour
         {
             CurrentBean = StraightBean;
         }
+
+        Debug.Log(CurrentBean);
     }
 
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
-        float GrowthTimer =+ Time.deltaTime;
+        float GrowthTimer = 0;
+        GrowthTimer += Time.deltaTime;
 
         if (GrowthTimer > GrowthRate)
         {
+            GameObject NewBean = null;
             if (CurrentBean = StraightBean)
             {
-                Instantiate(CurrentBean, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, BeanLean));
+                NewBean = Instantiate(CurrentBean, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, BeanLean));
             }
 
             if (CurrentBean = LeftBean)
             {
-                Instantiate(CurrentBean, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, BeanLean + 15));
+                NewBean = Instantiate(CurrentBean, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, BeanLean + 15));
             }
 
             if (CurrentBean = RightBean)
             {
-                Instantiate(CurrentBean, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, BeanLean - 15));
+                NewBean = Instantiate(CurrentBean, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, BeanLean - 15));
             }
 
             GrowthTimer = 0;
+            LastBean = NewBean;
         }
     }
 }
