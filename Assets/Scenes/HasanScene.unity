@@ -346,6 +346,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1103899167, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+      propertyPath: rotSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103899167, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+      propertyPath: JumpPower
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103899167, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+      propertyPath: jumpIncreaseRate
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8549253416156401051, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
       propertyPath: m_RootOrder
       value: 1
