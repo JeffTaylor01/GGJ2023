@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerJump : MonoBehaviour
 {
@@ -10,16 +11,36 @@ public class PlayerJump : MonoBehaviour
     [SerializeField]
     Camera camera;
     Vector3 MousePos;
-    Vector3 JumpDirection;
+    public Vector3 JumpDirection;
     float JumpPower;
+    public float jumpIncreasRate;
 
+    public bool isJumping;
+
+    [Header("JumpingUI")]
+    public GameObject jumpArrow;
+    public SpriteRenderer jumpArrowUI;
+    GameObject player;
+    public Vector3 playerOffset;
+
+    public float rotSpeed;
     void Start()
     {
-
+        Player = this.gameObject;
+        camera = Camera.main;
+        player = GameObject.FindGameObjectWithTag("Player");
+        jumpArrowUI = jumpArrow.GetComponentInChildren<SpriteRenderer>();
+        jumpArrowUI.enabled = false;
     }
 
 
     void Update()
+    {
+        Jump();
+        RotateArrow(JumpDirection);
+    }
+
+    private void Jump()
     {
         RaycastHit hit;
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
@@ -28,7 +49,9 @@ public class PlayerJump : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            JumpPower += 0.1f;
+            jumpArrowUI.enabled = true;
+            //isJumping = true;
+            JumpPower += jumpIncreasRate;
 
             if (Physics.Raycast(ray, out hit))
             {
@@ -36,12 +59,20 @@ public class PlayerJump : MonoBehaviour
                 JumpDirection.z = 0;
                 Debug.Log(JumpDirection);
             }
+
         }
 
-        if(Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
+            jumpArrowUI.enabled = false;
+            isJumping = false;
             Player.GetComponent<Rigidbody>().velocity = JumpPower * JumpDirection;
+            JumpPower = 0;
         }
-
+    }
+    private void RotateArrow(Vector3 rotationDirection)
+    {
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(0, 0, jumpArrow.transform.rotation.z), rotationDirection);
+        jumpArrow.transform.rotation = Quaternion.RotateTowards(jumpArrow.transform.rotation, lookRotation, rotSpeed * Time.deltaTime);
     }
 }
