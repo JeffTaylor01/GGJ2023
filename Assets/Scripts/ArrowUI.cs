@@ -7,6 +7,8 @@ public class ArrowUI : MonoBehaviour
 {
     public PlayerJump playerJump;
     public Slider arrowSlider;
+    public Image fill;
+    public Gradient gradient;
 
 
     [Header("JumpingUI")]
@@ -45,10 +47,12 @@ public class ArrowUI : MonoBehaviour
     {
         arrowSlider.maxValue = jumpPowerLimit;
         arrowSlider.value = 0;
+        fill.color = gradient.Evaluate(0f);
     }
     private void SetSliderValue(float currentJumpPower)
     {
         arrowSlider.value = currentJumpPower;
+        fill.color = gradient.Evaluate(arrowSlider.normalizedValue);
     }
 
     private void RotateArrow(Vector3 rotationDirection)
