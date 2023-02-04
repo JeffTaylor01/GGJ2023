@@ -6,16 +6,17 @@ public class BeanRotation : MonoBehaviour
 {
     public Transform player;
     public float globalAngle;
+    public float rotationSpeed;
 
     private void FixedUpdate()
     {
         if (player.position.x > transform.position.x)
         {
-            globalAngle -= 0.05f;
+            globalAngle -= rotationSpeed;
         }
         else
         {
-            globalAngle += 0.05f;
+            globalAngle += rotationSpeed;
         }
        /*
         if (globalAngle < 0)
