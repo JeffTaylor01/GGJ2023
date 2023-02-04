@@ -1250,7 +1250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globalAngle: 0
-  RotationSpeed: 20
+  RotationSpeed: 100
   player: {fileID: 148835168}
 --- !u!212 &1663447701
 SpriteRenderer:

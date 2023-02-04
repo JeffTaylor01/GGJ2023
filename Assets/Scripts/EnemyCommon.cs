@@ -8,5 +8,7 @@ public class EnemyCommon : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Player.GetComponent<HealthSystem>().TakeDamage();
+
+
     }
 }

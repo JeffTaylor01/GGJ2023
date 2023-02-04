@@ -22,7 +22,18 @@ public class BeanRotation : MonoBehaviour
         if (AdjacentBean != null)
         {
             Vector3 direction = AdjacentBean.transform.position - player.position;
-            globalAngle = -Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            if(direction.x > 0)
+            {
+                globalAngle += 0.07f;
+            }
+
+            if (direction.x < 0)
+            {
+                globalAngle -= 0.07f;
+            }
+
+            //globalAngle = -Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         }
 
         Quaternion newRotation = Quaternion.Euler(0, 0, globalAngle);
@@ -32,13 +43,14 @@ public class BeanRotation : MonoBehaviour
     GameObject GetAdjacentBean()
     {
         GameObject[] Beans = GameObject.FindGameObjectsWithTag("Bean");
+        GameObject nearestBean = Beans[0];
         foreach (GameObject Bean in Beans)
         {
-            if (Vector3.Distance(Bean.transform.position, player.position) < 10)
+            if (Vector3.Distance(Bean.transform.position, player.position) < Vector3.Distance(nearestBean.transform.position, player.position))
             {
-                return Bean;
+                nearestBean = Bean;
             }
         }
-        return null;
+        return nearestBean;
     }
 }
