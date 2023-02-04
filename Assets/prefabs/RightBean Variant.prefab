@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1028442340176570166}
   m_Layer: 0
   m_Name: RightBean Variant
-  m_TagString: Untagged
+  m_TagString: Bean
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

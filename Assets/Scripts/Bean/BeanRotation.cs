@@ -1,34 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class BeanRotation : MonoBehaviour
 {
-    public Transform player;
     public float globalAngle;
-    public float rotationSpeed;
-    public BeanGrowth beanGrowth;
+    public float RotationSpeed;
+    public Transform player;
 
-    private void FixedUpdate()
+    GameObject AdjacentBean;
+
+    void Start()
     {
-        Transform lastBean = beanGrowth.LastBean.transform;
+        globalAngle = 0;
+    }
 
-        if (player.position.x > lastBean.position.x)
+    void Update()
+    {
+        AdjacentBean = GetAdjacentBean();
+
+        if (AdjacentBean != null)
         {
-            globalAngle -= rotationSpeed;
+            Vector3 direction = AdjacentBean.transform.position - player.position;
+            globalAngle = -Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         }
-        else
+
+        Quaternion newRotation = Quaternion.Euler(0, 0, globalAngle);
+        transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * RotationSpeed);
+    }
+
+    GameObject GetAdjacentBean()
+    {
+        GameObject[] Beans = GameObject.FindGameObjectsWithTag("Bean");
+        foreach (GameObject Bean in Beans)
         {
-            globalAngle += rotationSpeed;
+            if (Vector3.Distance(Bean.transform.position, player.position) < 10)
+            {
+                return Bean;
+            }
         }
-        /*
-        if (globalAngle < 0)
-        {
-            transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + 0.1f);
-        }
-        else if (globalAngle > 0)
-        {
-            transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z - 0.1f);
-        }
-        */
+        return null;
     }
 }

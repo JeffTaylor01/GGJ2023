@@ -180,6 +180,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b216fd2e17e4be149a1b2450bce64c0e, type: 3}
+--- !u!1 &148835167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1418765860977300156, guid: 8356ffbc633e6694f8f47b3227dfeb46, type: 3}
+  m_PrefabInstance: {fileID: 7492841827735299183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &148835168 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 598210595330527068, guid: 8356ffbc633e6694f8f47b3227dfeb46, type: 3}
+  m_PrefabInstance: {fileID: 7492841827735299183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &297753063
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,11 +347,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407787761}
   m_CullTransparentMesh: 1
---- !u!4 &429817717 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7492841827893484314, guid: 8356ffbc633e6694f8f47b3227dfeb46, type: 3}
-  m_PrefabInstance: {fileID: 7492841827735299183}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &431477268
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +747,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1526196820, guid: cc5c46068c225884bbd2f00a94ab7b29, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 148835167}
     - target: {fileID: 5332282758890141746, guid: cc5c46068c225884bbd2f00a94ab7b29, type: 3}
       propertyPath: m_Name
       value: RightLeaf
@@ -1032,6 +1041,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 116095523, guid: e43c7efa816c0b144a2c0a40fbd975ba, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 148835167}
     - target: {fileID: 1539952358690894484, guid: e43c7efa816c0b144a2c0a40fbd975ba, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1236,10 +1249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b14fb2aaf2b1ba34bbd4485b877fa2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 429817717}
   globalAngle: 0
-  rotationSpeed: 0.07
-  beanGrowth: {fileID: 1663447699}
+  RotationSpeed: 20
+  player: {fileID: 148835168}
 --- !u!212 &1663447701
 SpriteRenderer:
   m_ObjectHideFlags: 0
