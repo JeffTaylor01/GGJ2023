@@ -23,7 +23,6 @@ public class BeanGrowth : MonoBehaviour
         GrowthTimer = 0;
     }
 
-
     void Update()
     {
         BeanLean = gameObject.GetComponent<BeanRotation>().globalAngle;
@@ -71,14 +70,14 @@ public class BeanGrowth : MonoBehaviour
 
             if (NonPlatTiles >= 2)
             {
-               if (Random.Range(0, 1) == 1)
-               {
+                if (Random.Range(0, 2) == 1)
+                {
                     Instantiate(RightLeaf, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, 0));
-               }
-               else
-               {
+                }
+                else
+                {
                     Instantiate(LeftLeaf, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, 0));
-               }
+                }
 
                 LeafCounter++;
                 NonPlatTiles = 0;
