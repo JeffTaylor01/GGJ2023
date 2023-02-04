@@ -13,12 +13,17 @@ public class PlayerJump : MonoBehaviour
     Vector3 JumpDirection;
     float JumpPower;
 
+
+    public bool onGround;
+
+    public Animator anim;
+    public SpriteRenderer sr;
     void Start()
     {
 
     }
 
-
+   
     void Update()
     {
         RaycastHit hit;
@@ -41,7 +46,38 @@ public class PlayerJump : MonoBehaviour
         if(Input.GetMouseButtonUp(0))
         {
             Player.GetComponent<Rigidbody>().velocity = JumpPower * JumpDirection;
+            
+        }
+        
+
+        if (Player.GetComponent<Rigidbody>().velocity.x > 0)
+        {
+            //right
+            //anim.SetBool("FacingLeft", false);
+            
+            anim.SetBool("Jumping", true);
+            sr.flipX = true;
+        }
+        else
+        {
+            anim.SetBool("Jumping", false);
+        }
+       
+
+
+        if (Player.GetComponent<Rigidbody>().velocity.x < 0)
+        {
+            anim.SetBool("FacingLeft", true);
+            //left
+            sr.flipX = false;
+            anim.SetBool("Jumping", true);
+
+        }
+        else
+        {
+            anim.SetBool("Jumping", false);
         }
 
+        
     }
 }
