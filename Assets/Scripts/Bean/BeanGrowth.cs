@@ -25,11 +25,11 @@ public class BeanGrowth : MonoBehaviour
 
         if (BeanLean > 15)
         {
-            CurrentBean = RightBean;
+            CurrentBean = LeftBean;
         }
         else if (BeanLean < -15)
         {
-            CurrentBean = LeftBean;
+            CurrentBean = RightBean;
         }
         else if (BeanLean > -15 && BeanLean < 15)
         {
@@ -53,12 +53,12 @@ public class BeanGrowth : MonoBehaviour
 
             if (CurrentBean == LeftBean)
             {
-                NewBean = Instantiate(CurrentBean, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, BeanLean - 15));
+                NewBean = Instantiate(CurrentBean, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, BeanLean + 15));
             }
 
             if (CurrentBean == RightBean)
             {
-                NewBean = Instantiate(CurrentBean, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, BeanLean + 15));
+                NewBean = Instantiate(CurrentBean, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, BeanLean - 15));
             }
 
             GrowthTimer = 0;

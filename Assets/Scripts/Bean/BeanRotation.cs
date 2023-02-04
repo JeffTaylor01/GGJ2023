@@ -11,11 +11,11 @@ public class BeanRotation : MonoBehaviour
     {
         if (player.position.x > transform.position.x)
         {
-            globalAngle += 0.01f;
+            globalAngle -= 0.05f;
         }
         else
         {
-            globalAngle -= 0.01f;
+            globalAngle += 0.05f;
         }
        /*
         if (globalAngle < 0)
