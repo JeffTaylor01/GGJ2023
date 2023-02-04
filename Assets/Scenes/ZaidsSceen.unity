@@ -1448,6 +1448,10 @@ PrefabInstance:
       propertyPath: Hearts.Array.data[2]
       value: 
       objectReference: {fileID: 1538608680}
+    - target: {fileID: 7492841827893484314, guid: 8356ffbc633e6694f8f47b3227dfeb46, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7492841827893484317, guid: 8356ffbc633e6694f8f47b3227dfeb46, type: 3}
       propertyPath: camera
       value: 
