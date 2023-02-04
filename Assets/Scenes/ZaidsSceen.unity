@@ -731,7 +731,7 @@ MonoBehaviour:
   LeftBean: {fileID: 2412966331926067314, guid: 7304a4c28d9ea234a876c2aa737c583d, type: 3}
   RightBean: {fileID: 4605243178778884877, guid: 9a497f7d66adee24aacdec7b1459b3c9, type: 3}
   LastBean: {fileID: 1195193900}
-  GrowthRate: 0.1
+  GrowthRate: 1.5
 --- !u!114 &1663447700
 MonoBehaviour:
   m_ObjectHideFlags: 0

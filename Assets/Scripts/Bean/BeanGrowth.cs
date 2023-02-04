@@ -11,10 +11,11 @@ public class BeanGrowth : MonoBehaviour
     public GameObject LastBean;
     public float GrowthRate;
     float BeanLean;
+    float GrowthTimer;
 
     void Start()
     {
-        
+        GrowthTimer = 0;
     }
 
 
@@ -28,7 +29,7 @@ public class BeanGrowth : MonoBehaviour
         }
         else if (BeanLean < -15)
         {
-            CurrentBean= LeftBean;
+            CurrentBean = LeftBean;
         }
         else if (BeanLean > -15 && BeanLean < 15)
         {
@@ -40,25 +41,24 @@ public class BeanGrowth : MonoBehaviour
 
     public void FixedUpdate()
     {
-        float GrowthTimer = 0;
         GrowthTimer += Time.deltaTime;
 
         if (GrowthTimer > GrowthRate)
         {
             GameObject NewBean = null;
-            if (CurrentBean = StraightBean)
+            if (CurrentBean == StraightBean)
             {
                 NewBean = Instantiate(CurrentBean, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, BeanLean));
             }
 
-            if (CurrentBean = LeftBean)
-            {
-                NewBean = Instantiate(CurrentBean, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, BeanLean + 15));
-            }
-
-            if (CurrentBean = RightBean)
+            if (CurrentBean == LeftBean)
             {
                 NewBean = Instantiate(CurrentBean, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, BeanLean - 15));
+            }
+
+            if (CurrentBean == RightBean)
+            {
+                NewBean = Instantiate(CurrentBean, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, BeanLean + 15));
             }
 
             GrowthTimer = 0;
