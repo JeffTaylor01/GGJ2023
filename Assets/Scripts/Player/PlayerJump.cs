@@ -16,6 +16,8 @@ public class PlayerJump : MonoBehaviour
     public float jumpIncreaseRate;
     public float jumpPowerLimit;
 
+    public Animator anim;
+
     public bool isJumping;
 
     [Header("JumpingUI")]
@@ -42,6 +44,18 @@ public class PlayerJump : MonoBehaviour
     {
         Jump();
         //RotateArrow(JumpDirection);
+
+
+        if (Player.GetComponent<Rigidbody>().velocity.x > 0)
+        {
+            anim.SetBool("facingright", true);
+        }
+
+        if (Player.GetComponent<Rigidbody>().velocity.x < 0)
+        {
+
+            anim.SetBool("facingright", false);
+        }
     }
 
     private void Jump()
@@ -74,7 +88,10 @@ public class PlayerJump : MonoBehaviour
             isJumping = false;
             Player.GetComponent<Rigidbody>().velocity = JumpPower * JumpDirection;
             JumpPower = 0;
+            
         }
+
+        
     }
     private void RotateArrow(Vector3 rotationDirection)
     {
@@ -87,11 +104,13 @@ public class PlayerJump : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        anim.SetBool("isjumping", false);
         isJumping = false;
     }
 
     private void OnCollisionExit(Collision collision)
     {
+        anim.SetBool("isjumping", true);
         isJumping = true;
     }
 }
