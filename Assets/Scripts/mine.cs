@@ -20,7 +20,7 @@ public class mine : MonoBehaviour
             if (!hasTakenDamage)
             {
                 Player.GetComponent<HealthSystem>().TakeDamage();
-                gameObject.GetComponent<Animation>().Play();
+                this.GetComponent<Animation>().Play();
                 Destroy(gameObject.GetComponent<MeshRenderer>());
                 Destroy(GetComponent<BoxCollider>());
                 hasTakenDamage = true;
