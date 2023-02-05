@@ -59,5 +59,9 @@ public class ArrowUI : MonoBehaviour
         Vector3 direction = (mouseWorldPos - jumpArrow.transform.position).normalized;
         Quaternion rotation = Quaternion.LookRotation(Vector3.forward, direction);
         jumpArrow.transform.rotation = rotation;
+
+        /*  Vector3 arrowDirection = playerJump.JumpDirection;
+          arrowDirection.z = 10f;
+          Quaternion arrowRotation = Quaternion.LookRotation(Vector3.forward, arrowDirection);*/
     }
 }
