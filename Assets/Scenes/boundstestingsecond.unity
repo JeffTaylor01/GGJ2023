@@ -427,6 +427,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 429817713}
   camera: {fileID: 1158432292}
+  JumpDirection: {x: 0, y: 0, z: 0}
+  JumpPower: 0
+  jumpIncreaseRate: 0
+  jumpPowerLimit: 0
+  anim: {fileID: 429817721}
+  isJumping: 0
+  jumpArrow: {fileID: 0}
+  jumpArrowUI: {fileID: 0}
+  playerOffset: {x: 0, y: 0, z: 0}
+  rotSpeed: 0
 --- !u!212 &429817716
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -487,7 +497,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429817713}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.48037362, y: 3.94, z: 1.3361737}
+  m_LocalPosition: {x: -1.06, y: 3.81, z: 1.3361737}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

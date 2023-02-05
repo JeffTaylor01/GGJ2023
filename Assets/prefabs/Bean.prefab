@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5132817649065830992}
-  m_Layer: 0
+  - component: {fileID: 3920326519621735309}
+  m_Layer: 8
   m_Name: Bean
   m_TagString: Bean
   m_Icon: {fileID: 0}
@@ -33,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3920326519621735309
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2379176525613966681}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 23.486748, y: 40.229652, z: 7.6374927}
+  m_Center: {x: -0.037151337, y: 16.359818, z: 0.5729158}
 --- !u!1 &4740538314566120093
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,9 +56,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7163074689095336056}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnPoint
-  m_TagString: Untagged
+  m_TagString: Bean
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,9 +88,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7958293557865316455}
   - component: {fileID: 8782624707591863499}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: straightbean
-  m_TagString: Untagged
+  m_TagString: Bean
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

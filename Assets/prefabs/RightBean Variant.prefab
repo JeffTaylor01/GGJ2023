@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7287731634410052843}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1028442340176570166}
-  m_Layer: 0
+  - component: {fileID: 1265841676429449670}
+  m_Layer: 8
   m_Name: RightBean Variant
   m_TagString: Bean
   m_Icon: {fileID: 0}
@@ -64,6 +65,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1265841676429449670
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4605243178778884877}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 33.948776, y: 37.010204, z: 6.1137342}
+  m_Center: {x: 9.859287, y: 15.292383, z: 0.009336948}
 --- !u!1 &8200518916790888998
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1243642200539972471}
   - component: {fileID: 528567390507480043}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RIghtBean (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
