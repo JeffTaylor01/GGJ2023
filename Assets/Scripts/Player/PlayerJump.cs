@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerJump : MonoBehaviour
+public class PlayerJump : MonoBehaviour, IAudible
 {
     [SerializeField]
     GameObject Player;
@@ -20,6 +20,9 @@ public class PlayerJump : MonoBehaviour
 
     public bool isJumping;
 
+    public AudioSource jumpAudioSource;
+    public AudioSource landAudioSource;
+
     [Header("JumpingUI")]
     public GameObject jumpArrow;
     public SpriteRenderer jumpArrowUI;
@@ -35,7 +38,8 @@ public class PlayerJump : MonoBehaviour
         Player = this.gameObject;
 
         anim = GetComponent<Animator>();
-
+        jumpAudioSource = GameObject.Find("Jump").GetComponent<AudioSource>();
+        landAudioSource = GameObject.Find("Land").GetComponent<AudioSource>();
         camera = Camera.main;
         player = GameObject.FindGameObjectWithTag("Player");
         jumpArrowUI = jumpArrow.GetComponentInChildren<SpriteRenderer>();
@@ -90,7 +94,7 @@ public class PlayerJump : MonoBehaviour
             isJumping = false;
             Player.GetComponent<Rigidbody>().velocity = JumpPower * JumpDirection;
             JumpPower = 0;
-            
+            jumpAudioSource.Play();
         }
 
         
@@ -108,11 +112,21 @@ public class PlayerJump : MonoBehaviour
     {
         anim.SetBool("isjumping", false);
         isJumping = false;
+
+        if(collision.gameObject.tag == "leaf")
+        {
+            PlaySoundEffect(landAudioSource);
+        }
     }
 
     private void OnCollisionExit(Collision collision)
     {
         anim.SetBool("isjumping", true);
         isJumping = true;
+    }
+
+    public void PlaySoundEffect(AudioSource soundEffectSource)
+    {
+        soundEffectSource.Play();
     }
 }
