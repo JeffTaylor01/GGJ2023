@@ -25,7 +25,7 @@ public class BeanRotation : MonoBehaviour
         {
             if (hitLeft.collider.gameObject.layer == BeanLayer)
             {
-                    globalAngle -= 0.07f;
+                    globalAngle -= 0.2f;
             }
         }
         
@@ -33,7 +33,7 @@ public class BeanRotation : MonoBehaviour
         {
             if (hitRight.collider.gameObject.layer == BeanLayer)
             {
-                    globalAngle += 0.07f;
+                    globalAngle += 0.2f;
             }
         }
     }
