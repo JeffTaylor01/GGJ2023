@@ -11,7 +11,6 @@ public class OUB : MonoBehaviour
     private void Start()
     {
         GameOverUI.SetActive(false);
-       GameOverUI = GameObject.Find("GameOverUI");
     }
     private void Update()
     {
