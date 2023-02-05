@@ -27,7 +27,7 @@ public class HealthSystem : MonoBehaviour, IAudible
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (gameObject.transform.position.y < RespawnLoc.y)
         {
             TakeDamage();
         }
