@@ -12,7 +12,13 @@ public class LeafAnimScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         gameObject.GetComponent<Animation>().Play();
+    }
 
-        player.GetComponent<HealthSystem>().RespawnLoc = gameObject.transform.GetChild(1).transform.position;
+    private void Update()
+    {
+        if(player.transform.position.y > gameObject.transform.position.y)
+        {
+            player.GetComponent<HealthSystem>().RespawnLoc = gameObject.transform.GetChild(1).transform.position;
+        }
     }
 }
