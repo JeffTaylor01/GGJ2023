@@ -18,6 +18,8 @@ public class HealthSystem : MonoBehaviour, IAudible
         {
             Hearts[i].GetComponent<Image>().sprite = FullHeart;
         }
+        Health = 3;
+        MaxHealth = 3;
 
         audioSource = GetComponent<AudioSource>();
     }
@@ -25,7 +27,10 @@ public class HealthSystem : MonoBehaviour, IAudible
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage();
+        }
     }
 
     public void TakeDamage()
