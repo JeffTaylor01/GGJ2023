@@ -24,7 +24,6 @@ public class mine : MonoBehaviour
                 Destroy(gameObject.GetComponent<MeshRenderer>());
                 Destroy(GetComponent<BoxCollider>());
                 hasTakenDamage = true;
-
                 Destroy(gameObject, 1);
             }
 
