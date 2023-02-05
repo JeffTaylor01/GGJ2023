@@ -46,24 +46,26 @@ public class RootGrowth : MonoBehaviour
 
         if (GrowthTimer > GrowthRate)
         {
-            GameObject NewBean = null;
+            GameObject NewRoot = null;
             if (CurrentRoot == StraightRoot)
             {
-                NewBean = Instantiate(CurrentRoot, LastRoot.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, -BeanLean));
+                NewRoot = Instantiate(CurrentRoot, LastRoot.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, -BeanLean));
             }
 
             if (CurrentRoot == LeftRoot)
             {
-                NewBean = Instantiate(CurrentRoot, LastRoot.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, -BeanLean - 15));
+                NewRoot = Instantiate(CurrentRoot, LastRoot.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, -BeanLean - 15));
             }
 
             if (CurrentRoot == RightRoot)
             {
-                NewBean = Instantiate(CurrentRoot, LastRoot.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, -BeanLean + 15));
+                NewRoot = Instantiate(CurrentRoot, LastRoot.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, -BeanLean + 15));
             }
 
+            NewRoot.transform.localScale = LastRoot.transform.localScale;
+
             GrowthTimer = 0;
-            LastRoot = NewBean;
+            LastRoot = NewRoot;
         }
     }
 }

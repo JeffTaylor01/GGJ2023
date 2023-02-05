@@ -10,6 +10,11 @@ public class TitleStuff : MonoBehaviour, IAudible
     {
         Application.Quit();
     }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
     public void PlaySoundEffect(AudioSource soundEffectSource)
     {
         throw new System.NotImplementedException();
