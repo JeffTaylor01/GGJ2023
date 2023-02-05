@@ -27,8 +27,8 @@ public class PlayerJump : MonoBehaviour
     public float rotSpeed;
     void Start()
     {
-        jumpIncreaseRate = 0.5f;
-        jumpPowerLimit = 15;
+        jumpIncreaseRate = 0.1f;
+        jumpPowerLimit = 25;
 
         Player = this.gameObject;
         camera = Camera.main;
