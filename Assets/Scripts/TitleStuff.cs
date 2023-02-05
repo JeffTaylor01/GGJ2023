@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TitleStuff : MonoBehaviour
+public class TitleStuff : MonoBehaviour, IAudible
 {
-    public void LoadScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void PlaySoundEffect(AudioSource soundEffectSource)
+    {
+        throw new System.NotImplementedException();
     }
         
 }

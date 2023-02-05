@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Pause : MonoBehaviour
+public class Pause : MonoBehaviour, IAudible
 {
     public GameObject pauseMenu;
 
     public bool isPaused = false;
 
+    public AudioSource audioSource;
+
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         Time.timeScale = 0;
     }
     private void Update()
@@ -31,12 +34,14 @@ public class Pause : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
+        PlaySoundEffect(audioSource);
     }
 
     public void ResumeGame()
     {
         isPaused = false;
         Time.timeScale = 1;
+        PlaySoundEffect(audioSource);
         pauseMenu.SetActive(false);
     }
 
@@ -60,5 +65,10 @@ public class Pause : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         Time.timeScale = 1;
+    }
+
+    public void PlaySoundEffect(AudioSource soundEffectSource)
+    {
+        throw new System.NotImplementedException();
     }
 }
