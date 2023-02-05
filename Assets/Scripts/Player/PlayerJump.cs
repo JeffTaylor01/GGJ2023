@@ -30,6 +30,8 @@ public class PlayerJump : MonoBehaviour, IAudible
     public Vector3 playerOffset;
 
     public float rotSpeed;
+    public GameObject dust;
+
     void Start()
     {
         jumpIncreaseRate = 0.1f;
@@ -44,6 +46,8 @@ public class PlayerJump : MonoBehaviour, IAudible
         player = GameObject.FindGameObjectWithTag("Player");
         jumpArrowUI = jumpArrow.GetComponentInChildren<SpriteRenderer>();
         jumpArrowUI.enabled = false;
+
+        dust = GameObject.Find("CFXR3 Hit Misc F Smoke");
     }
 
 
@@ -115,6 +119,7 @@ public class PlayerJump : MonoBehaviour, IAudible
 
         if(collision.gameObject.tag == "leaf")
         {
+            dust.GetComponent<ParticleSystem>().Play(); 
             PlaySoundEffect(landAudioSource);
         }
     }
