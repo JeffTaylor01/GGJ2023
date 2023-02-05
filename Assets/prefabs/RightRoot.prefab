@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4479543803856485578}
   - component: {fileID: 2600717554563902586}
+  - component: {fileID: 1248008800900169896}
   m_Layer: 0
   m_Name: rootconnecctive
   m_TagString: Untagged
@@ -84,6 +85,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1248008800900169896
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901587021169804968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.000001, y: 15, z: 0.89185333}
+  m_Center: {x: 4.1255746, y: -6.3609467, z: 0.11654663}
 --- !u!1 &6515964758197706823
 GameObject:
   m_ObjectHideFlags: 0
