@@ -50,6 +50,7 @@ public class BeanGrowth : MonoBehaviour
         if (GrowthTimer > GrowthRate)
         {
             GameObject NewBean = null;
+            GameObject NewLeaf = null;
             if (CurrentBean == StraightBean)
             {
                 NewBean = Instantiate(CurrentBean, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, BeanLean));
@@ -68,16 +69,20 @@ public class BeanGrowth : MonoBehaviour
                 NonPlatTiles++;
             }
 
+            NewBean.transform.localScale = LastBean.transform.localScale;
+
             if (NonPlatTiles >= 2)
             {
                 if (Random.Range(0, 2) == 1)
                 {
-                    Instantiate(RightLeaf, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, 0));
+                    NewLeaf = Instantiate(RightLeaf, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, 0));
                 }
                 else
                 {
-                    Instantiate(LeftLeaf, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, 0));
+                    NewLeaf = Instantiate(LeftLeaf, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, 0));
                 }
+
+                NewLeaf.transform.localScale = LastBean.transform.localScale;
 
                 LeafCounter++;
                 NonPlatTiles = 0;
