@@ -52,6 +52,7 @@ public class Pause : MonoBehaviour
 
     public void TimeScaleResume()
     {
+        //StartCoroutine(Timer());
         Time.timeScale = 1;
     }
 
