@@ -648,6 +648,7 @@ GameObject:
   - component: {fileID: 1103899168}
   - component: {fileID: 1103899169}
   - component: {fileID: 1103899167}
+  - component: {fileID: 1632241453}
   m_Layer: 0
   m_Name: PlayerTest
   m_TagString: Player
@@ -803,8 +804,28 @@ MonoBehaviour:
   JumpPower: 1
   jumpIncreaseRate: 15
   jumpPowerLimit: 2
+  anim: {fileID: 8549253416156401050}
   isJumping: 0
   jumpArrow: {fileID: 178728082}
   jumpArrowUI: {fileID: 0}
   playerOffset: {x: 0, y: 5, z: 0}
   rotSpeed: 200
+--- !u!114 &1632241453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8549253416156401052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f3deea8d8d47548a05884423ebc858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RespawnLoc: {x: 0, y: 0, z: 0}
+  MaxHealth: 0
+  Health: 0
+  Hearts: []
+  FullHeart: {fileID: 0}
+  EmptyHeart: {fileID: 0}
+  audioSource: {fileID: 0}
