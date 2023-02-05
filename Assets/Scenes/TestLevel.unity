@@ -3365,11 +3365,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 962317399}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 43.985336, y: 0.14965382, z: -6.935435}
-  m_LocalScale: {x: 6.136811, y: 4.98846, z: 0.43784314}
+  m_LocalPosition: {x: 0, y: 0, z: -63.359993}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 994893922}
+  m_Father: {fileID: 1632241460}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &962317401
@@ -3569,11 +3569,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ea2f3c441947e043989d9755c7a110a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &994893922 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7492841827893484314, guid: 8356ffbc633e6694f8f47b3227dfeb46, type: 3}
-  m_PrefabInstance: {fileID: 154479349}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1008593759
 GameObject:
   m_ObjectHideFlags: 0
@@ -4350,6 +4345,10 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1632241451}
+    - target: {fileID: 1103899167, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 962317402}
     - target: {fileID: 8549253416156401051, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -5047,6 +5046,11 @@ MonoBehaviour:
   FullHeart: {fileID: 0}
   EmptyHeart: {fileID: 0}
   audioSource: {fileID: 0}
+--- !u!4 &1632241460 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8549253416156401051, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+  m_PrefabInstance: {fileID: 1353742793}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1670594241
 PrefabInstance:
   m_ObjectHideFlags: 0
