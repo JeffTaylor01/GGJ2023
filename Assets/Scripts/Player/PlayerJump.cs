@@ -33,6 +33,9 @@ public class PlayerJump : MonoBehaviour
         jumpPowerLimit = 25;
 
         Player = this.gameObject;
+
+        anim = GetComponent<Animator>();
+
         camera = Camera.main;
         player = GameObject.FindGameObjectWithTag("Player");
         jumpArrowUI = jumpArrow.GetComponentInChildren<SpriteRenderer>();
