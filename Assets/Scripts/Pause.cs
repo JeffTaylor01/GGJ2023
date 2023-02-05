@@ -11,6 +11,7 @@ public class Pause : MonoBehaviour, IAudible
 
     public AudioSource audioSource;
 
+
     private void Start()
     {
         Time.timeScale = 0;
@@ -27,7 +28,7 @@ public class Pause : MonoBehaviour, IAudible
             {
                 ResumeGame();
             }
-            else { PauseGame(); }
+            else { PauseGame();  }
         }
         
     }

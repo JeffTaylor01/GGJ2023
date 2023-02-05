@@ -3685,6 +3685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 734186173}
   - component: {fileID: 734186172}
+  - component: {fileID: 734186174}
   m_Layer: 0
   m_Name: Square (2)
   m_TagString: Untagged
@@ -3759,6 +3760,19 @@ Transform:
   m_Father: {fileID: 1267723884}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &734186174
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734186171}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.7037048, y: 0.06274701, z: 0.2000001}
+  m_Center: {x: -0.00000037349025, y: 1.3575143, z: 0}
 --- !u!1001 &777105199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4063,6 +4077,7 @@ MonoBehaviour:
   - {fileID: 1963444813}
   - {fileID: 1883144628}
   - {fileID: 1431051016}
+  LoseScreen: {fileID: 0}
   FullHeart: {fileID: 21300000, guid: 69512d6b316e40a4c87c53021b21a931, type: 3}
   EmptyHeart: {fileID: 21300000, guid: 40a387b7a3fbd1a4ba16a6b17aba7c33, type: 3}
   audioSource: {fileID: 0}
@@ -5211,7 +5226,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: c33b4b36562e89e4bbf5ac96af1093ef, type: 3}
     - target: {fileID: 8549253416156401051, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8549253416156401051, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9487,7 +9502,7 @@ PrefabInstance:
       objectReference: {fileID: 8549253417493361749}
     - target: {fileID: 6702095054264520498, guid: 017ad96d79cda374d890032edc15993e, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6702095054264520498, guid: 017ad96d79cda374d890032edc15993e, type: 3}
       propertyPath: m_LocalPosition.x
