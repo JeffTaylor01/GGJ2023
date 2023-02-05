@@ -12,6 +12,7 @@ public class HealthSystem : MonoBehaviour, IAudible
     public Sprite FullHeart;
     public Sprite EmptyHeart;
     public AudioSource audioSource;
+    bool takingDamaging = false;
     void Start()
     {
         for (int i = 0; i < Hearts.Length; i++)
@@ -29,16 +30,20 @@ public class HealthSystem : MonoBehaviour, IAudible
     {
         if (gameObject.transform.position.y < RespawnLoc.y)
         {
-            TakeDamage();
+            //TakeDamage();
         }
     }
 
     public void TakeDamage()
     {
-        Hearts[Health - 1].GetComponent<Image>().sprite = EmptyHeart;
-        Health -= 1;
-        PlaySoundEffect(audioSource);
+        if (Health > 0)
+        {
+            Hearts[Health - 1].GetComponent<Image>().sprite = EmptyHeart;
+            Health -= 1;
+            PlaySoundEffect(audioSource);
+        }
     }
+
 
     public void PlaySoundEffect(AudioSource soundEffectSource)
     {
