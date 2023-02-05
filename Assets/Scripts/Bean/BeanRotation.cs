@@ -8,6 +8,12 @@ public class BeanRotation : MonoBehaviour
     public float RotationSpeed;
     public float globalAngle;
     public float raycastLength;
+    LayerMask BeanLayer;
+
+    private void Start()
+    {
+        BeanLayer = LayerMask.NameToLayer("BeanLayer");
+    }
 
     void FixedUpdate()
     {
@@ -15,23 +21,19 @@ public class BeanRotation : MonoBehaviour
         Vector3 leftDirection = -player.right;
         Vector3 rightDirection = player.right;
 
-        if (Physics.Raycast(player.position, leftDirection, out hitLeft, raycastLength) &&
-            Physics.Raycast(player.position, rightDirection, out hitRight, raycastLength))
+        if (Physics.Raycast(player.position, leftDirection, out hitLeft, raycastLength))
         {
-            RaycastHit hit = hitLeft.distance < hitRight.distance ? hitLeft : hitRight;
-            if (hit.collider.CompareTag("Bean"))
+            if (hitLeft.collider.gameObject.layer == BeanLayer)
             {
-                Vector3 direction = hit.transform.position - player.position;
-
-                if (direction.x > 0)
-                {
-                    globalAngle += 0.07f;
-                }
-
-                if (direction.x < 0)
-                {
                     globalAngle -= 0.07f;
-                }
+            }
+        }
+        
+        if (Physics.Raycast(player.position, rightDirection, out hitRight, raycastLength))
+        {
+            if (hitRight.collider.gameObject.layer == BeanLayer)
+            {
+                    globalAngle += 0.07f;
             }
         }
     }

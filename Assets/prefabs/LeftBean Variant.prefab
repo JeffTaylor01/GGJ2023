@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5935978329757375436}
-  m_Layer: 0
+  - component: {fileID: 4928106295423904508}
+  m_Layer: 8
   m_Name: LeftBean Variant
   m_TagString: Bean
   m_Icon: {fileID: 0}
@@ -33,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4928106295423904508
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2412966331926067314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 32.94425, y: 33.861343, z: 6.281817}
+  m_Center: {x: -8.690218, y: 15.989525, z: 0.29354358}
 --- !u!1 &4516423800253474271
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +56,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6435859902043216432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8566110426046730663}
   - component: {fileID: 9190011693608756991}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leftbean
   m_TagString: Untagged
   m_Icon: {fileID: 0}
