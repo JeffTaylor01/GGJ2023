@@ -7,11 +7,12 @@ using UnityEditor.SceneManagement;
 public class OUB : MonoBehaviour
 {
     public GameObject GameOverUI;
+    LayerMask Bean;
 
     private void Start()
     {
         GameOverUI.SetActive(false);
-       GameOverUI = GameObject.Find("GameOverUI");
+        Bean = LayerMask.NameToLayer("BeanLayer");
     }
     private void Update()
     {
@@ -19,7 +20,7 @@ public class OUB : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.tag == "Player")
+        if (collider.gameObject.layer == Bean)
         {
             Time.timeScale = 0;
             GameOverUI.SetActive(true);
