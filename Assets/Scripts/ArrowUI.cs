@@ -20,7 +20,6 @@ public class ArrowUI : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        playerJump = player.GetComponent<PlayerJump>();
         if (playerJump != null)
         {
             Debug.Log("found player");

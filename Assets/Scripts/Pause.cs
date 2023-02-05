@@ -13,8 +13,7 @@ public class Pause : MonoBehaviour, IAudible
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        Time.timeScale = 0;
+        Time.timeScale = 1;
     }
     private void Update()
     {
