@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class BeanGrowth : MonoBehaviour
@@ -17,10 +18,12 @@ public class BeanGrowth : MonoBehaviour
     float GrowthTimer;
     int LeafRate;
     int NonPlatTiles;
+    bool leftleaf;
 
     void Start()
     {
         GrowthTimer = 0;
+        leftleaf = false;
     }
 
     void Update()
@@ -71,15 +74,18 @@ public class BeanGrowth : MonoBehaviour
 
             NewBean.transform.localScale = LastBean.transform.localScale;
 
-            if (NonPlatTiles >= 2)
+            if (NonPlatTiles >= 1)
             {
-                if (Random.Range(0, 2) == 1)
+                
+                if (leftleaf == false)
                 {
                     NewLeaf = Instantiate(RightLeaf, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, 0));
+                    leftleaf = true;
                 }
                 else
                 {
                     NewLeaf = Instantiate(LeftLeaf, LastBean.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, 0));
+                    leftleaf = false;
                 }
 
                 NewLeaf.transform.localScale = LastBean.transform.localScale;
