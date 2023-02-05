@@ -4262,10 +4262,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5713026940955128805, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
-      propertyPath: m_audioClip
+    - target: {fileID: 1632241453, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+      propertyPath: Hearts.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 0a7094cbac2c94d4fbe7bdb688c483a9, type: 3}
+      objectReference: {fileID: 1963444813}
+    - target: {fileID: 1632241453, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+      propertyPath: Hearts.Array.data[1]
+      value: 
+      objectReference: {fileID: 1883144628}
+    - target: {fileID: 1632241453, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+      propertyPath: Hearts.Array.data[2]
+      value: 
+      objectReference: {fileID: 1431051016}
     - target: {fileID: 8549253416156401051, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
       propertyPath: m_RootOrder
       value: 13
