@@ -4262,6 +4262,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 962317403, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1632241453, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
       propertyPath: Hearts.Array.data[0]
       value: 
@@ -4274,6 +4278,14 @@ PrefabInstance:
       propertyPath: Hearts.Array.data[2]
       value: 
       objectReference: {fileID: 1431051016}
+    - target: {fileID: 5713026940955128805, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6b5ff88aea39d514d93ba9b05ef0e11c, type: 3}
+    - target: {fileID: 7545004976963259127, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c33b4b36562e89e4bbf5ac96af1093ef, type: 3}
     - target: {fileID: 8549253416156401051, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
       propertyPath: m_RootOrder
       value: 13
