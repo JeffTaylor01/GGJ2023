@@ -777,6 +777,7 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   jumpArrow: {fileID: 1419156140}
+  smoothness: 10
 --- !u!1 &1419156140
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,9 +1245,12 @@ MonoBehaviour:
   JumpDirection: {x: 0, y: 0, z: 0}
   JumpPower: 1
   jumpIncreaseRate: 15
-  jumpPowerLimit: 2
+  jumpPowerLimit: 15
   anim: {fileID: 8549253416156401050}
   isJumping: 0
+  jumpCount: 0
+  extraJumpLimit: 0
+  canDoubleJump: 0
   jumpAudioSource: {fileID: 0}
   landAudioSource: {fileID: 0}
   jumpArrow: {fileID: 178728082}
