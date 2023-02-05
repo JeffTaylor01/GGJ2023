@@ -27,11 +27,7 @@ public class HealthSystem : MonoBehaviour, IAudible
 
     void Update()
     {
-<<<<<<< Updated upstream
         if (gameObject.transform.position.y < RespawnLoc.y)
-=======
-        if(gameObject.transform.position.y < RespawnLoc.y)
->>>>>>> Stashed changes
         {
             TakeDamage();
         }
