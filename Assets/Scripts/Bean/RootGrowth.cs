@@ -19,7 +19,6 @@ public class RootGrowth : MonoBehaviour
         GrowthTimer = 0;
     }
 
-
     void Update()
     {
         BeanLean = BeanBase.GetComponent<BeanRotation>().globalAngle;
@@ -46,20 +45,23 @@ public class RootGrowth : MonoBehaviour
 
         if (GrowthTimer > GrowthRate)
         {
+            Vector3 newRootPos = LastRoot.transform.GetChild(1).transform.position;
+            newRootPos.z = 0;
+
             GameObject NewRoot = null;
             if (CurrentRoot == StraightRoot)
             {
-                NewRoot = Instantiate(CurrentRoot, LastRoot.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, -BeanLean));
+                NewRoot = Instantiate(CurrentRoot, LastRoot.transform.GetChild(1).transform.position, Quaternion.identity);
             }
 
             if (CurrentRoot == LeftRoot)
             {
-                NewRoot = Instantiate(CurrentRoot, LastRoot.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, -BeanLean - 15));
+                NewRoot = Instantiate(CurrentRoot, newRootPos, Quaternion.identity);
             }
 
             if (CurrentRoot == RightRoot)
             {
-                NewRoot = Instantiate(CurrentRoot, LastRoot.transform.GetChild(1).transform.position, Quaternion.Euler(0, 0, -BeanLean + 15));
+                NewRoot = Instantiate(CurrentRoot, newRootPos, Quaternion.identity);
             }
 
             NewRoot.transform.localScale = LastRoot.transform.localScale;
