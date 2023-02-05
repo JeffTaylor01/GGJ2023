@@ -15,6 +15,7 @@ public class ArrowUI : MonoBehaviour
     GameObject player;
 
     Camera camera;
+    public float smoothness = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -53,16 +54,9 @@ public class ArrowUI : MonoBehaviour
 
     private void RotateArrow()
     {
-        /*Vector3 mousePos = Input.mousePosition;
-        mousePos.z = 10f; // distance from the camera
-        Vector3 mouseWorldPos = camera.ScreenToWorldPoint(mousePos);
-        Vector3 direction = (mouseWorldPos - jumpArrow.transform.position).normalized;
-        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, direction);
-        jumpArrow.transform.rotation = rotation;*/
-
         Vector3 arrowDirection = playerJump.JumpDirection;
         arrowDirection.z = 10f;
-        Quaternion arrowRotation = Quaternion.LookRotation(Vector3.forward, arrowDirection);
-        jumpArrow.transform.rotation = arrowRotation;
+        Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, arrowDirection);
+        jumpArrow.transform.rotation = Quaternion.Lerp(jumpArrow.transform.rotation, targetRotation, Time.deltaTime * smoothness);
     }
 }
