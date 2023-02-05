@@ -19,6 +19,10 @@ public class PlayerJump : MonoBehaviour, IAudible
     public Animator anim;
 
     public bool isJumping;
+    public int jumpCount;
+    public int extraJumpLimit;
+
+    public bool canDoubleJump;
 
     public AudioSource jumpAudioSource;
     public AudioSource landAudioSource;
@@ -35,7 +39,9 @@ public class PlayerJump : MonoBehaviour, IAudible
     void Start()
     {
         jumpIncreaseRate = 0.1f;
-        jumpPowerLimit = 25;
+
+        jumpCount = 0;
+        extraJumpLimit = 1;
 
         Player = this.gameObject;
 
@@ -65,6 +71,7 @@ public class PlayerJump : MonoBehaviour, IAudible
         }
 
         Jump();
+        LimitJump();
         //RotateArrow(JumpDirection);
 
 
@@ -84,7 +91,7 @@ public class PlayerJump : MonoBehaviour, IAudible
     {
         MousePos = Input.mousePosition;
 
-        if (Input.GetMouseButton(0) && !isJumping)
+        if (Input.GetMouseButton(0)/* && !isJumping*/ && canDoubleJump)
         {
             if (JumpPower <= jumpPowerLimit)
             {
@@ -92,16 +99,30 @@ public class PlayerJump : MonoBehaviour, IAudible
             }
         }
 
-        if (Input.GetMouseButtonUp(0) && !isJumping)
+        if (Input.GetMouseButtonUp(0) /*&& !isJumping*/ && canDoubleJump)
         {
+
             //jumpArrowUI.enabled = false;
-            isJumping = false;
+            isJumping = true;
             Player.GetComponent<Rigidbody>().velocity = JumpPower * JumpDirection;
             JumpPower = 0;
             jumpAudioSource.Play();
+
+            jumpCount++;
+
         }
 
-        
+
+    }
+    public void LimitJump()
+    {
+        if (isJumping == true)
+        {
+            if (jumpCount > extraJumpLimit)
+            {
+                canDoubleJump = false;
+            }
+        }
     }
     private void RotateArrow(Vector3 rotationDirection)
     {
@@ -115,12 +136,14 @@ public class PlayerJump : MonoBehaviour, IAudible
     private void OnCollisionEnter(Collision collision)
     {
         anim.SetBool("isjumping", false);
-        isJumping = false;
 
-        if(collision.gameObject.tag == "leaf")
+        if (collision.gameObject.tag == "leaf")
         {
-            dust.GetComponent<ParticleSystem>().Play(); 
+            dust.GetComponent<ParticleSystem>().Play();
             PlaySoundEffect(landAudioSource);
+            jumpCount = 0;
+            isJumping = false;
+            canDoubleJump = true;
         }
     }
 
