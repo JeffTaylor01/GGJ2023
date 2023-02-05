@@ -53,11 +53,16 @@ public class ArrowUI : MonoBehaviour
 
     private void RotateArrow()
     {
-        Vector3 mousePos = Input.mousePosition;
+        /*Vector3 mousePos = Input.mousePosition;
         mousePos.z = 10f; // distance from the camera
         Vector3 mouseWorldPos = camera.ScreenToWorldPoint(mousePos);
         Vector3 direction = (mouseWorldPos - jumpArrow.transform.position).normalized;
         Quaternion rotation = Quaternion.LookRotation(Vector3.forward, direction);
-        jumpArrow.transform.rotation = rotation;
+        jumpArrow.transform.rotation = rotation;*/
+
+        Vector3 arrowDirection = playerJump.JumpDirection;
+        arrowDirection.z = 10f;
+        Quaternion arrowRotation = Quaternion.LookRotation(Vector3.forward, arrowDirection);
+        jumpArrow.transform.rotation = arrowRotation;
     }
 }
