@@ -21,6 +21,7 @@ public class OUB : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
+            Time.timeScale = 0;
             GameOverUI.SetActive(true);
         }
 
