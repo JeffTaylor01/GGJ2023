@@ -9,6 +9,7 @@ public class HealthSystem : MonoBehaviour, IAudible
     public int MaxHealth;
     public int Health;
     public GameObject[] Hearts;
+    public GameObject LoseScreen;
     public Sprite FullHeart;
     public Sprite EmptyHeart;
     public AudioSource audioSource;
@@ -28,9 +29,14 @@ public class HealthSystem : MonoBehaviour, IAudible
 
     void Update()
     {
-        if (gameObject.transform.position.y < RespawnLoc.y)
+        if (gameObject.transform.position.y < RespawnLoc.y && RespawnLoc.y > 0)
         {
-            //TakeDamage();
+            TakeDamage();
+        }
+
+        if(Health <= 0)
+        {
+            LoseScreen.SetActive(true);
         }
     }
 

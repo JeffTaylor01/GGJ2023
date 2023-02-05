@@ -72,8 +72,6 @@ public class PlayerJump : MonoBehaviour, IAudible
 
         Jump();
         LimitJump();
-        //RotateArrow(JumpDirection);
-
 
         if (Player.GetComponent<Rigidbody>().velocity.x > 0)
         {
@@ -91,7 +89,7 @@ public class PlayerJump : MonoBehaviour, IAudible
     {
         MousePos = Input.mousePosition;
 
-        if (Input.GetMouseButton(0)/* && !isJumping*/ && canDoubleJump)
+        if (Input.GetMouseButton(0) && canDoubleJump)
         {
             if (JumpPower <= jumpPowerLimit)
             {
@@ -99,10 +97,8 @@ public class PlayerJump : MonoBehaviour, IAudible
             }
         }
 
-        if (Input.GetMouseButtonUp(0) /*&& !isJumping*/ && canDoubleJump)
+        if (Input.GetMouseButtonUp(0) && canDoubleJump)
         {
-
-            //jumpArrowUI.enabled = false;
             isJumping = true;
             Player.GetComponent<Rigidbody>().velocity = JumpPower * JumpDirection;
             JumpPower = 0;
@@ -124,15 +120,6 @@ public class PlayerJump : MonoBehaviour, IAudible
             }
         }
     }
-    private void RotateArrow(Vector3 rotationDirection)
-    {
-        Vector3 screenPos = camera.WorldToScreenPoint(Player.transform.position);
-        Vector3 direction = (Input.mousePosition - screenPos).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.Euler(0, 0, angle);
-        jumpArrow.transform.rotation = Quaternion.RotateTowards(jumpArrow.transform.rotation, rotation, rotSpeed * Time.deltaTime);
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         anim.SetBool("isjumping", false);
