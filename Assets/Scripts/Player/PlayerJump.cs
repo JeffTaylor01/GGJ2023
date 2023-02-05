@@ -40,32 +40,31 @@ public class PlayerJump : MonoBehaviour
 
     void Update()
     {
+
+        RaycastHit hit;
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            JumpDirection = (hit.point - Player.transform.position).normalized;
+            JumpDirection.z = 0;
+            Debug.Log(JumpDirection);
+        }
+
         Jump();
         //RotateArrow(JumpDirection);
     }
 
     private void Jump()
     {
-        RaycastHit hit;
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-
         MousePos = Input.mousePosition;
 
         if (Input.GetMouseButton(0) && !isJumping)
         {
-            //jumpArrowUI.enabled = true;
             if (JumpPower <= jumpPowerLimit)
             {
                 JumpPower += jumpIncreaseRate;
             }
-
-            if (Physics.Raycast(ray, out hit))
-            {
-                JumpDirection = (hit.point - Player.transform.position).normalized;
-                JumpDirection.z = 0;
-                Debug.Log(JumpDirection);
-            }
-
         }
 
         if (Input.GetMouseButtonUp(0) && !isJumping)
