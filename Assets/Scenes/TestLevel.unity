@@ -1287,7 +1287,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 62f2112e022e67640b30c77f465278f1, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2863,7 +2863,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 3a83d30d416e26f4b87abcde9e20cd27, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4900,6 +4900,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1632241453, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+      propertyPath: Health
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1632241453, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+      propertyPath: MaxHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1632241453, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
       propertyPath: Hearts.Array.data[0]
       value: 
       objectReference: {fileID: 1963444813}
@@ -4911,6 +4919,14 @@ PrefabInstance:
       propertyPath: Hearts.Array.data[2]
       value: 
       objectReference: {fileID: 1431051016}
+    - target: {fileID: 5713026940955128805, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ccddcf3b148390549a6a6aed05d80fd8, type: 3}
+    - target: {fileID: 7545004976963259127, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c33b4b36562e89e4bbf5ac96af1093ef, type: 3}
     - target: {fileID: 8549253416156401051, guid: 554a13cc5e6a5124b95b370eb5c8db87, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -6430,7 +6446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1626330782
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6951,7 +6967,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 4f1bdf7ff6eb5ee41aff407fd309fac6, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

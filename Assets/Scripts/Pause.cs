@@ -13,7 +13,7 @@ public class Pause : MonoBehaviour, IAudible
 
     private void Start()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 0;
         if(audioSource != null)
         {
             Debug.Log("Found Source");
