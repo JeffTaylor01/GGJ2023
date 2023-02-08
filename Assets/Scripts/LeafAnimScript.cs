@@ -8,6 +8,10 @@ public class LeafAnimScript : MonoBehaviour
     private void OnEnable()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null)
+        {
+            Debug.LogError("LeafAnimScript: Could not find player with tag 'Player'");
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -16,9 +20,17 @@ public class LeafAnimScript : MonoBehaviour
 
     private void Update()
     {
-        if(player.transform.position.y > gameObject.transform.position.y)
+        if (player != null && player.transform.position.y > gameObject.transform.position.y)
         {
-            player.GetComponent<HealthSystem>().RespawnLoc = gameObject.transform.GetChild(1).transform.position;
+            HealthSystem healthSystem = player.GetComponent<HealthSystem>();
+            if (healthSystem != null)
+            {
+                healthSystem.RespawnLoc = gameObject.transform.GetChild(1).transform.position;
+            }
+            else
+            {
+                Debug.LogError("LeafAnimScript: Could not find HealthSystem component on player object");
+            }
         }
     }
 }
